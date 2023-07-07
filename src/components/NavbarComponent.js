@@ -3,10 +3,10 @@ import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 
 const NavbarComponent = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar variant="dark" expand="lg" className="navbar">
       <Container>
         <Navbar.Brand href="#">
-          <strong>Lilymra</strong> Kasir
+          <strong>Lilymra Foody</strong>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
