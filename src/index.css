@@ -12,3 +12,8 @@ body {
 code {
   font-family: 'Narnoor', serif;
 }
+
+.kategori-aktif {
+  background-color: #1495db !important;
+  color: white !important;
+}

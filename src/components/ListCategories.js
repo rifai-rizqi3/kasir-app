@@ -42,6 +42,8 @@ export default class ListCategories extends Component {
 
   render() {
     const { categories } = this.state;
+    const { changeCategory, categoriYangDipilih } = this.props;
+
     return (
       <Col md={2} mt="2">
         <h4>
@@ -51,7 +53,14 @@ export default class ListCategories extends Component {
         <ListGroup>
           {categories &&
             categories.map((category) => (
-              <ListGroup.Item key={category.id}>
+              <ListGroup.Item
+                key={category.id}
+                onClick={() => changeCategory(category.nama)}
+                className={
+                  categoriYangDipilih === category.nama ? "kategori-aktif" : ""
+                }
+                style={{ cursor: "pointer" }}
+              >
                 <h5>
                   <Icon nama={category.nama} /> {category.nama}
                 </h5>

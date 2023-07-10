@@ -10,7 +10,7 @@ const NavbarComponent = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
+          {/* <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
             navbarScroll
@@ -30,7 +30,7 @@ const NavbarComponent = () => {
             <Nav.Link href="#" disabled>
               Link
             </Nav.Link>
-          </Nav>
+          </Nav> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
