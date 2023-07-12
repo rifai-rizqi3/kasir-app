@@ -1,11 +1,11 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { Hasil, ListCategories, Menus, NavbarComponent } from "./components";
+import { Hasil, ListCategories, Menus } from "../components";
 import React, { Component } from "react";
-import { API_URL } from "./utils/constants";
+import { API_URL } from "../utils/constants";
 import axios from "axios";
 import swal from "sweetalert";
 
-export default class App extends Component {
+export default class Home extends Component {
   constructor(props) {
     super(props);
 
@@ -128,57 +128,33 @@ export default class App extends Component {
   render() {
     const { menus, categoriYangDipilih, keranjangs } = this.state;
     return (
-      <div className="App">
-        <NavbarComponent />
-        <div className="mt-3">
-          <Container fluid>
-            <Row>
-              <ListCategories
-                changeCategory={this.changeCategory}
-                categoriYangDipilih={categoriYangDipilih}
-              />
-              <Col>
-                <h4>
-                  <strong>Daftar Produk</strong>
-                </h4>
-                <hr />
-                <Row>
-                  {menus &&
-                    menus.map((menu) => (
-                      <Menus
-                        key={menu.id}
-                        menu={menu}
-                        masukKeranjang={this.masukKeranjang}
-                      />
-                    ))}
-                </Row>
-              </Col>
-              <Hasil keranjangs={keranjangs} />
-            </Row>
-          </Container>
-        </div>
+      <div className="mt-3">
+        <Container fluid>
+          <Row>
+            <ListCategories
+              changeCategory={this.changeCategory}
+              categoriYangDipilih={categoriYangDipilih}
+            />
+            <Col>
+              <h4>
+                <strong>Daftar Produk</strong>
+              </h4>
+              <hr />
+              <Row>
+                {menus &&
+                  menus.map((menu) => (
+                    <Menus
+                      key={menu.id}
+                      menu={menu}
+                      masukKeranjang={this.masukKeranjang}
+                    />
+                  ))}
+              </Row>
+            </Col>
+            <Hasil keranjangs={keranjangs} />
+          </Row>
+        </Container>
       </div>
     );
   }
 }
-
-// import React, { Component } from "react";
-// import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import NavbarComponent from "./components/NavbarComponent";
-// import { Home, Sukses } from "./pages";
-
-// export default class App extends Component {
-//   render() {
-//     return (
-//       <BrowserRouter>
-//         <NavbarComponent />
-//         <main>
-//           <Switch>
-//             <Route path="/" Component={Home} />
-//             <Route path="/" Component={Sukses} />
-//           </Switch>
-//         </main>
-//       </BrowserRouter>
-//     );
-//   }
-// }
